@@ -49,15 +49,17 @@ h3 {
     width: 80px;
     height: 80px;
     margin: auto;
+    display: none;
 }
 
 .x-icon {
     font-size: 124px;
     color: #2ec4b6;
+    display: none;
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #2ec4b6; /* Green */
     border: none;
     color: white;
     padding: 20px;
@@ -69,4 +71,21 @@ button {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-  }
+}
+
+input {
+    height: 40px;
+    width: 40px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.clicked-circle .circle-icon {
+    display: inline-block;
+}
+
+.clicked-x .x-icon {
+    display: inline-block;
+}

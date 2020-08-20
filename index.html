@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
 </head>
 
 <body>
@@ -15,27 +16,53 @@
         <h3>Baltazar Ortiz</h3>
     </div>
 
+    <input type="checkbox" id="first-turn" name="first-turn" checked="checked">
+    <label for="first-turn"> I want to go first</label><br>
+
     <table>
+        <tr>
+            <td class="upper-row-space clicked-circle">
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
+            <td class="middle-col-space upper-row-space clicked-x">
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
+            <td class="upper-row-space">
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
+        </tr>
+
         <tr>
             <td class="upper-row-space">
                 <div class="circle-icon"></div>
-            </td>
-            <td class="middle-col-space upper-row-space">
                 <span class="x-icon">X</span>
             </td>
-            <td class="upper-row-space"></td>
+            <td class="middle-col-space upper-row-space">
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
+            <td class="upper-row-space">
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
         </tr>
 
         <tr>
-            <td class="upper-row-space"></td>
-            <td class="middle-col-space upper-row-space"></td>
-            <td class="upper-row-space"></td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td class="middle-col-space"></td>
-            <td></td>
+            <td>
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
+            <td class="middle-col-space">
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
+            <td>
+                <div class="circle-icon"></div>
+                <span class="x-icon">X</span>
+            </td>
         </tr>
     </table>
 
