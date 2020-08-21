@@ -1,6 +1,6 @@
 const button = document.querySelector("button");
 const allSquares = document.getElementsByTagName("td");
-var isPlayerTurn = document.querySelector('input').value;
+var isPlayerTurn = document.querySelector('input').checked;
 const computersIcon = (isPlayerTurn) ? "clicked-circle" : "clicked-x";
 const playersIcon = (isPlayerTurn) ? "clicked-x" : "clicked-circle";
 var gameOver = false;
@@ -24,6 +24,8 @@ function restart() {    //get all squares and make them all display none
         allSquares[i].classList.remove("clicked-x");
         allSquares[i].classList.remove("clicked-circle");
     }
+    isPlayerTurn = document.querySelector('input').checked;
+    computerTurn();
 }
 
 function squareClick(btn) {   //play game
