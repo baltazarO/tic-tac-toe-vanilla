@@ -6,27 +6,28 @@ var computersIcon = (isPlayerTurn) ? "clicked-circle" : "clicked-x";
 var playersIcon = (isPlayerTurn) ? "clicked-x" : "clicked-circle";
 
 setUpBoard();
-computerTurn();
-yourTurn();
 
-function restart() {
-    //get all squares and make them all display none
+function restart() {    //get all squares and make them all display none
     for (let i = 0; i < allSquares.length; i++) {
         allSquares[i].classList.remove("clicked-x");
         allSquares[i].classList.remove("clicked-circle");
     }
 }
 
-function yourTurn() {  //play game
+function yourTurn(btn) {   //play game
+    computerTurn();
     if (isPlayerTurn) {
-
+        if (!btn.classList.contains("clicked-x") && !btn.classList.contains("clicked-circle")) {
+            btn.classList.add(playersIcon);
+            isPlayerTurn = false;
+        }
     }
 }
 
 function computerTurn() {
     if (!isPlayerTurn) {    //pick random square
         let emptyIndex = Math.floor(Math.random() * 9);
-        while(allSquares[emptyIndex].classList.contains("clicked-x") || allSquares[emptyIndex].classList.contains("clicked-circle")) {
+        while(spaceOccupied(emptyIndex)) {
             emptyIndex = Math.floor(Math.random() * 9);
         }
         allSquares[emptyIndex].classList.add(computersIcon);
@@ -34,5 +35,16 @@ function computerTurn() {
     }
 }
 
+function spaceOccupied(index) {
+    if (allSquares[index].classList.contains("clicked-x") || allSquares[index].classList.contains("clicked-circle")) {
+        return true;
+    } return false;
+}
 
-
+function setUpBoard() {
+    for(let x = 0; x < allSquares.length; x++) {
+        allSquares[x].addEventListener("click",function() {
+            yourTurn(allSquares[x]);
+        });
+    }
+}
