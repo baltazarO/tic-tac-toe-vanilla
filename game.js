@@ -42,14 +42,16 @@ function squareClick(btn) {   //play game
 }
 
 function computerTurn() {
-    if (!isPlayerTurn) {    //pick random square
-        let emptyIndex = Math.floor(Math.random() * 9);
-        while (spaceOccupied(emptyIndex)) {
-            emptyIndex = Math.floor(Math.random() * 9);
+    if (!gameOver) {
+        if (!isPlayerTurn) {    //pick random square
+            let emptyIndex = Math.floor(Math.random() * 9);
+            while (spaceOccupied(emptyIndex)) {
+                emptyIndex = Math.floor(Math.random() * 9);
+            }
+            allSquares[emptyIndex].classList.add(computersIcon);
+            isPlayerTurn = true;
+            checkWin(computersIcon);
         }
-        allSquares[emptyIndex].classList.add(computersIcon);
-        isPlayerTurn = true;
-        checkWin(computersIcon);
     }
 }
 
